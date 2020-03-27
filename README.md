@@ -6,6 +6,6 @@
   imagemagick  
   image format:  
     1600x1600  
-    1600-<PRODUCT_NAME>_<nn>.png  
+    1600-<PRODUCT_NAME>_<00>.png  
       <PRODUCT_NAME> = any string  
-      <nn> = 01..99  
+      <00> = 01..99  
