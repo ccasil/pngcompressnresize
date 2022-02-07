@@ -8,14 +8,7 @@ for i in $(ls | egrep -i '^1600\-(.*)+\_[0-9][0-9]\.png$'); do
     INAME=${FNAME:0:${#FNAME}-3}
     convert "$i" -resize 1024 base-"$j"
     convert base-"$j" -trim +repage 1024-"$j"
-    convert "$i" -define filter:blur=0.4 -filter Gaussian -resize 800 -flatten -quality 90% 800-"$FNAME".jpg
-    convert "$i" -define filter:blur=0.4 -filter Gaussian -resize 640 -flatten -quality 90% 640-"$FNAME".jpg
     convert "$i" -define filter:blur=0.4 -filter Gaussian -resize 480 -flatten -quality 90% 480-"$FNAME".jpg
-    convert "$i" -define filter:blur=0.4 -filter Gaussian -resize 320 -flatten -quality 90% 320-"$FNAME".jpg
-    convert "$i" -define filter:blur=0.4 -filter Gaussian -resize 200 -flatten -quality 90% 200-"$FNAME".jpg
-    convert "$i" -resize 180 180-"$j"
-    convert 180-"$j" -gravity center +repage -extent 200x200 +repage -flatten -quality 90% "$FNAME".jpg
-    mv "$i" /mnt/backup/product_img_1600/;
     rm -f  base-"$j";
     rm -f 180-"$j";
     if [ -f "$INAME"_01.jpg ]
