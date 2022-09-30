@@ -1,5 +1,5 @@
 #!/bin/bash
-cd /var/www/Products;
+# cd /var/www/Products;
 SAVEIFS=$IFS;
 IFS=$(echo -en "\n\b");
 for i in $(ls | egrep -i '^1600\-(.*)+\_[0-9][0-9]\.png$'); do
