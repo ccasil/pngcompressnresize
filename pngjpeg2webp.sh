@@ -11,12 +11,12 @@ for file in "$source_dir"/*.{png,jpg,jpeg,PNG,JPG}; do
         base="${filename%.*}"
 
         # Check if the filename starts with "1600-" or "1024-"
-        if [ "$base" == "1600-"*]; then
+        if [[ "$base" == "1600-"* ]]; then
             echo "Skipping $filename"
         else
             output_file="$destination_dir/$base.webp"
             echo "Converting $filename to $output_file"
-            magick convert "$file" "$output_file"
+            magick "$file" "$output_file"
         fi
     fi
 done
